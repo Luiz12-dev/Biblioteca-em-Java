@@ -24,11 +24,17 @@ public Emprestimo realizarEmprestimo(Livro livro, Membro membro, LocalDate dataD
     }
 }
 
-public void realizarDevolucao(Emprestimo emprestimo, LocalDate dataDevolucaoReal){   // Método responsável por marcar a devolução do livro
+public void realizarDevolucao(Emprestimo emprestimo, LocalDate dataDevolucaoReal){ // Método responsável por realizar a devolução 
     if(emprestimo != null){
         emprestimo.setDataDevolucaoReal(dataDevolucaoReal);
         emprestimo.setStatus(Emprestimo.StatusEmprestimo.DEVOLVIDO);
-     Livro LivroDevolvido = Emprestimo.getLivro();
+        Livro livroDevolvido = emprestimo.getLivro();
+        if(livroDevolvido != null){
+            livroDevolvido.incrementarQuantidade();
+        }
+        System.out.println("Devolução do livro: "+ emprestimo.getLivro().getTitulo()+ "\nDevolução realizada em: "+dataDevolucaoReal );
+    }else {
+        System.out.println("ERRO: Livro indisponível para devolção tente novamente mais tarde !");
     }
 
 }
