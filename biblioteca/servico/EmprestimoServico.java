@@ -24,7 +24,16 @@ public Emprestimo realizarEmprestimo(Livro livro, Membro membro, LocalDate dataD
     }
 }
 
-public void realizarDevolucao(Emprestimo emprestimo, LocalDate dataDevolucaoReal){ // Método responsável por realizar a devolução 
+ /* Passo a passo para entender oque realmente acontece dentro desse código,
+Os parâmetros são os espaços reservados para os objetos reais para quando forem chamado, após isso, verifica-se se existe realmente um objeto através da condição "emprestimo != null"
+se realmente existir um objeto então ele da continuidade definindo a data real de emprestimo, usando o método da classe emprestimo que é responsável por definir a data real do mesmo,
+sendo ele o "setDataDevolucaoReal" e utilizando o atributo "dataDevolucaoReal" para receber a informação do dia que foi feito a devolução, em seguida, define-se o estatus do emprestimo 
+com o método "Enum" que esta presente dentro da classe "Emprestimo" definindo seu valor como "DEVOLVIDO", Então, criase uma variável do tipo "Livro" que irá receber o objeto
+"Livro" do objeto "emprestimo" que foi feito dentro do método "realizarEmprestimo", Se o "livroDevolvido" receber o objeto "Livro" ele aumentara a quantidade correspondente do mesmo,
+e após isso as respostas caso de errado em algum momento durante o código!
+*/
+    
+public void realizarDevolucao(Emprestimo emprestimo, LocalDate dataDevolucaoReal){
     if(emprestimo != null){
         emprestimo.setDataDevolucaoReal(dataDevolucaoReal);
         emprestimo.setStatus(Emprestimo.StatusEmprestimo.DEVOLVIDO);
