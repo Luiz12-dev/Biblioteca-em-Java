@@ -24,7 +24,14 @@ public class Livro {
 
     }
 
-    public void decrementarQuantidade() throws LivroNaoDisponivelException {
+    public void decrementarQuantidade() throws LivroNaoDisponivelException {  
+        
+    /* Métdoo responsável por diminuir a quantidade de livros existentes dento do sistema,
+    como funciona: Em primeiro momento criamos uma condiçaõ para saber se realmente existem livros disponíveis para emprestimo,
+    se houver, então ele diminui a quantidade de livros disponíves no sistema, para complementar e saber se deu certo a execução 
+    do método, criei um boolean chamado "emprestado", que no caso quando executar a diminuição da quantidade referente ao livro, retornará true para o boolean
+    assim gerando um tipo de confirmação referente a execução do metodo*/
+        
         boolean emprestado = false;
         if (this.quantidadeDisponivel>0){
             this.quantidadeDisponivel--;
