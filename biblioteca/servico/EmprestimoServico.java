@@ -6,6 +6,8 @@ import br.com.biblioteca.modelo.Livro;
 import br.com.biblioteca.modelo.Membro;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmprestimoServico {
 
