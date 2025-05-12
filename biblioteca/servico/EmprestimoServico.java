@@ -9,6 +9,8 @@ import java.time.LocalDate;
 
 public class EmprestimoServico {
 
+    private static List<Emprestimo> emprestimosAtivos= new ArrayList<>(); // Criação da lista de emprestimos ativos que teoricamente existem.
+
 
 public Emprestimo realizarEmprestimo(Livro livro, Membro membro, LocalDate dataDevolucaoEsperada) throws LivroNaoDisponivelException {   // método responsável por verificar se existe o livro no estoque, caso tenha, ira diminuir a quantidade em 1, em seguida definir a data em que foi realizado o emrpestimo após isso, criara um objeto constando que o emprestimo foi realizado com sucesso !
 
@@ -46,6 +48,22 @@ public void realizarDevolucao(Emprestimo emprestimo, LocalDate dataDevolucaoReal
         System.out.println("ERRO: Livro indisponível para devolção tente novamente mais tarde !");
     }
 
+
+
+/*Método responsável por procurar dentro da lista de emprestimos ativos um emprestimo em específico pelo ID dela,
+Explicação: Criação do método chamado 'buscarEmprestimoPorId' do tipo 'Emprestimo' 
+cria-se um parâmetro chamado emprestimoId do tipo int, que ja tem a informação referente ao id do emprestimo do usuário
+portanto, após a criação do parâmetro cria-se o laço de repetição for-each, onde nessa ocasião irá percorrer a lista de emprestimos ativos chamada 
+emprestimosAtivos, o objeto empresitmo percorre então a lista, então cria-se a condição na qual o objeto emprestimo identificar o id igual 
+ao do parâmetro, usa-se um return que irá mostrar como resultado o emprestimo em questão. Caso não encontre irá apenas retornar nulo !
+*/
+    public Emprestimo buscarEmprestimoPorID(int emprestimoId)(
+        for(Emprestimo emprestimo: emprestimosAtivos ){
+        if(emprestimo.getEmprestimoId()== emprestimoId){
+            return emprestimo;
+        
+    );
+            return null;
 }
 
 }
