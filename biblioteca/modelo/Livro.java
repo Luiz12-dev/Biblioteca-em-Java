@@ -60,7 +60,7 @@ public class Livro {
                 ", isbn='" + isbn + '\'' +
                 ", anoPublic=" + anoPublic +
                 ", quantidadeDisponivel=" + quantidadeDisponivel +
-                ", genero=" + genero + // Exibir nome do gênero
+                ", genero=" + genero + 
                 '}';
     }
 
